@@ -1,0 +1,60 @@
+# Local environment files and credentials (keep example templates)
+.env
+.env.*
+!.env.example
+!**/.env.example
+*.secret
+secrets/
+**/secrets/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Dependencies and virtual environments
+node_modules/
+**/node_modules/
+.venv/
+venv/
+env/
+**/.venv/
+**/venv/
+**/env/
+
+# Databases, backups, and dumps
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.db-journal
+*.sqlite-journal
+*.dump
+*.sql.gz
+
+# Generated builds and caches
+dist/
+build/
+coverage/
+.vite/
+.pytest_cache/
+__pycache__/
+*.py[cod]
+*.tsbuildinfo
+.cache/
+.turbo/
+
+# Logs and temporary files
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+
+# OS/editor metadata
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

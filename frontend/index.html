@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#f4ecd8" /><title>Kisan Hita — Features</title>
+    <style>
+      body.file-preview{margin:0;background:#f6f3e9;color:#292c20;font-family:system-ui,sans-serif}.file-preview *{box-sizing:border-box}.file-preview header{height:72px;background:#465330;color:#f4ecd8;display:flex;align-items:center;justify-content:space-between;padding:0 5vw}.file-preview .brand{color:inherit;text-decoration:none;font-size:20px;font-weight:800}.file-preview .tag{font-size:12px;opacity:.8}.file-preview main{max-width:900px;margin:auto;padding:9vh 24px}.file-preview .eyebrow{font-size:11px;letter-spacing:.12em;color:#737668;font-weight:700}.file-preview h1{font-size:clamp(32px,5vw,56px);line-height:1.08;letter-spacing:-.04em;color:#303526}.file-preview p{color:#686b60;line-height:1.65}.file-preview .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:28px}.file-preview .card{background:#fffefa;border:1px solid #e3e0d5;border-radius:10px;padding:20px;text-decoration:none;color:inherit;font-weight:650}.file-preview .card:hover{border-color:#a8b08f}.file-preview .note{padding:12px;background:#f5ead5;border-radius:7px;font-size:13px;display:inline-block}@media(max-width:600px){.file-preview .grid{grid-template-columns:1fr}.file-preview main{padding-top:48px}}
+    </style>
+  </head>
+  <body><div id="root"><p style="padding:2rem;font-family:system-ui">Loading Kisan Hita…</p></div>
+    <script>
+      if (location.protocol === 'file:') {
+        document.body.className = 'file-preview';
+        const features = [['my-farm-today','My Farm Today'],['choose-my-crop','Choose My Crop'],['check-my-crop','Check My Crop'],['market-prices','Market Prices'],['ask-kisan-hita','Ask Kisan Hita']];
+        const root = document.getElementById('root');
+        function render() {
+          const key = location.hash.slice(1);
+          const selected = features.find(([slug]) => slug === key);
+          root.innerHTML = `<header><a class="brand" href="#">Kisan Hita</a><span class="tag">Development foundation</span></header><main>${selected ? `<a href="#" style="color:#465330;text-decoration:none">← All features</a><p class="eyebrow">KISAN HITA</p><h1>${selected[1]}</h1><p>This feature is not built yet. Its page is ready for the next development stage.</p>` : `<p class="eyebrow">DEVELOPMENT FOUNDATION</p><h1>A little help for your farm, every day.</h1><p>Your farming tools will live here. Choose a feature to get started.</p><span class="note">For live backend connection, run the app with Vite and start FastAPI.</span><section class="grid">${features.map(([slug,label])=>`<a class="card" href="#${slug}">${label}　→</a>`).join('')}</section>`}</main>`;
+        }
+        addEventListener('hashchange', render);
+        render();
+      }
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
